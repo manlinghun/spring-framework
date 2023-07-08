@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-init-method="defInitMethod"
+       default-destroy-method="defDestroyMethod"
+	   default-lazy-init="false"
+>
+    <!-- 当定义一个bean时如果设置了init-method或destroy-method属性时，将不再实行默认的始化或销毁的方法，而执行bean中init-metho或destrdoy-method属性对应的始化或销毁方法 -->
+    <!-- 通过bean 的 Id  获取对象-->
+    <!--<bean id="oneInterface"-->
+          <!--class="com.test.ioc.interfaceImpls.OneInterfaceImpl"-->
+          <!--init-method="init"-->
+          <!--destroy-method="destroyMethod">-->
+
+    <!--</bean>-->
+
+<!--    <bean id="myBeanFactoryPostProcessor" class="com.test.config.MyBeanFactoryPostProcessor"/>-->
+
+    <bean id="injectionService" class="com.test.service.impl.InjectionServiceImpl" lazy-init="false">
+
+        <!--设值注入    通过set方法为对象赋值  如果使用设值注入的方式，那么必须要有默认的无参构造方法，在调用set方法前，会调用默认的无参构造方法生成一个对象-->
+<!--        <property name="injectionDao" ref="injectionDao"/>-->
+        <property name="serviceName" value="joddon"/>
+
+        <!--构造注入    通过构造方法为对象赋值 -->
+<!--        <constructor-arg name="injectionDao" ref="injectionDao"/>-->
+<!--        <constructor-arg name="serviceName" value="joddon2"/>-->
+    </bean>
+
+<!--    <bean id="injectionDao" class="com.test.dao.impl.InjectionDaoImpl"/>-->
+
+    <!--<bean id="testAwareBean" class="com.test.bean.TestAwareBean"></bean>-->
+
+</beans>

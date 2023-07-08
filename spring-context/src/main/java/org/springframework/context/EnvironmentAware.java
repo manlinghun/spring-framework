@@ -32,6 +32,6 @@ public interface EnvironmentAware extends Aware {
 	/**
 	 * Set the {@code Environment} that this component runs in.
 	 */
-	void setEnvironment(Environment environment);
+	void  setEnvironment(Environment environment);
 
 }
